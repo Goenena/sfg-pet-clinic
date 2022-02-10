@@ -1,4 +1,4 @@
-package com.avensic.sfgpetclinic.model;
+package sfgpetclinic.model;
 
 public class PetType {
 
