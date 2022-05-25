@@ -1,0 +1,14 @@
+com\avensic\sfgpetclinic\services\PetService.class
+com\avensic\sfgpetclinic\model\Owner.class
+com\avensic\sfgpetclinic\services\map\PetServiceMap.class
+com\avensic\sfgpetclinic\services\map\OwnerServiceMap.class
+com\avensic\sfgpetclinic\model\Person.class
+com\avensic\sfgpetclinic\services\CrudService.class
+com\avensic\sfgpetclinic\model\BaseEntity.class
+com\avensic\sfgpetclinic\services\OwnerService.class
+com\avensic\sfgpetclinic\model\Pet.class
+com\avensic\sfgpetclinic\services\map\VetServiceMap.class
+com\avensic\sfgpetclinic\model\PetType.class
+com\avensic\sfgpetclinic\model\Vet.class
+com\avensic\sfgpetclinic\services\map\AbstractMapService.class
+com\avensic\sfgpetclinic\services\VetService.class
