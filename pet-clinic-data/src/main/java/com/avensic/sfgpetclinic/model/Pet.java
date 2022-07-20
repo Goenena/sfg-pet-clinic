@@ -2,6 +2,7 @@ package com.avensic.sfgpetclinic.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity{
