@@ -1,10 +1,7 @@
 package com.avensic.sfgpetclinic.bootstrap;
 
 import com.avensic.sfgpetclinic.model.*;
-import com.avensic.sfgpetclinic.services.OwnerService;
-import com.avensic.sfgpetclinic.services.PetTypeService;
-import com.avensic.sfgpetclinic.services.SpecialtyService;
-import com.avensic.sfgpetclinic.services.VetService;
+import com.avensic.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtiesService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtiesService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -84,9 +83,16 @@ public class DataLoader implements CommandLineRunner {
         kyrasPet.setOwner(owner2);
         kyrasPet.setBirthDate(LocalDate.now());
         kyrasPet.setName("Finn");
-        owner1.getPets().add(kyrasPet);
+        owner2.getPets().add(kyrasPet);
 
         ownerService.save(owner2);
+
+        Visit dogVisit = new Visit();
+        dogVisit.setPet(kyrasPet);
+        dogVisit.setDate(LocalDate.now());
+        dogVisit.setDescription("Running Nose");
+
+        visitService.save(dogVisit);
 
         System.out.println("Loaded Owners... ");
 
